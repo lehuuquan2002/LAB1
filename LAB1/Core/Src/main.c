@@ -166,18 +166,32 @@ int main(void)
 
 	/* USER CODE END 2 */
 	clearAllClock();
-	int count = 11;
+	int hour = 1, minute = 40, second = 35;
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
 	while (1)
 	{
 	  /* USER CODE END WHILE */
 	  //display12SEG(count);
-	  setNumberOnClock(count);
-	  count--;
-	  if (count < 0){
-		  count = 11;
-		  clearAllClock();
+	  clearAllClock();
+	  setNumberOnClock(hour);
+	  setNumberOnClock(minute/5);
+	  setNumberOnClock(second/5);
+	  second++;
+
+	  if (second >= 60)
+	  {
+		  second = 0;
+		  minute++;
+	  }
+	  if (minute >= 60)
+	  {
+		  minute = 0;
+		  hour++;
+	  }
+	  if(hour >= 12)
+	  {
+		  hour = 0;
 	  }
 	  HAL_Delay(1000);
 	  /* USER CODE BEGIN 3 */
