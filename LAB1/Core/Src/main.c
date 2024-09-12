@@ -147,6 +147,23 @@ int main(void)
 		HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, LED_STATUS[11]);
 	}
 
+	void clearNumberOnClock(int num)
+	{
+		LED_STATUS[num] = 0;
+		HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, LED_STATUS[0]);
+		HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, LED_STATUS[1]);
+		HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, LED_STATUS[2]);
+		HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, LED_STATUS[3]);
+		HAL_GPIO_WritePin(LED_5_GPIO_Port, LED_5_Pin, LED_STATUS[4]);
+		HAL_GPIO_WritePin(LED_6_GPIO_Port, LED_6_Pin, LED_STATUS[5]);
+		HAL_GPIO_WritePin(LED_7_GPIO_Port, LED_7_Pin, LED_STATUS[6]);
+		HAL_GPIO_WritePin(LED_8_GPIO_Port, LED_8_Pin, LED_STATUS[7]);
+		HAL_GPIO_WritePin(LED_9_GPIO_Port, LED_9_Pin, LED_STATUS[8]);
+		HAL_GPIO_WritePin(LED_10_GPIO_Port, LED_10_Pin, LED_STATUS[9]);
+		HAL_GPIO_WritePin(LED_11_GPIO_Port, LED_11_Pin, LED_STATUS[10]);
+		HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, LED_STATUS[11]);
+	}
+
 	/* USER CODE END 2 */
 	clearAllClock();
 	int count = 11;
