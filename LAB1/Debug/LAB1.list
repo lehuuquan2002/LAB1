@@ -41,11 +41,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  18 .debug_line   00004a68  00000000  00000000  000394c7  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    00079b4d  00000000  00000000  0003df2f  2**0
+ 19 .debug_str    00079b48  00000000  00000000  0003df2f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  00000da8  00000000  00000000  000b7a7c  2**2
+ 20 .debug_frame  00000da8  00000000  00000000  000b7a78  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000005e  00000000  00000000  000b8824  2**0
+ 21 .debug_line_str 00000059  00000000  00000000  000b8820  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -289,10 +289,10 @@ int main(void)
  80002de:	2104      	movs	r1, #4
  80002e0:	4858      	ldr	r0, [pc, #352]	; (8000444 <main+0x21c>)
  80002e2:	f000 fd19 	bl	8000d18 <HAL_GPIO_WritePin>
-			  if (count1 < 0)
+			  if (count1 <= 0)
  80002e6:	f8d7 3128 	ldr.w	r3, [r7, #296]	; 0x128
  80002ea:	2b00      	cmp	r3, #0
- 80002ec:	da3a      	bge.n	8000364 <main+0x13c>
+ 80002ec:	dc3a      	bgt.n	8000364 <main+0x13c>
 			  {
 				  status1 = YELLOW;
  80002ee:	2301      	movs	r3, #1
@@ -320,10 +320,10 @@ int main(void)
  8000312:	2104      	movs	r1, #4
  8000314:	484b      	ldr	r0, [pc, #300]	; (8000444 <main+0x21c>)
  8000316:	f000 fcff 	bl	8000d18 <HAL_GPIO_WritePin>
-			  if (count1 < 0)
+			  if (count1 <= 0)
  800031a:	f8d7 3128 	ldr.w	r3, [r7, #296]	; 0x128
  800031e:	2b00      	cmp	r3, #0
- 8000320:	da22      	bge.n	8000368 <main+0x140>
+ 8000320:	dc22      	bgt.n	8000368 <main+0x140>
 			  {
 				  status1 = RED;
  8000322:	2300      	movs	r3, #0
@@ -350,10 +350,10 @@ int main(void)
  8000346:	2104      	movs	r1, #4
  8000348:	483e      	ldr	r0, [pc, #248]	; (8000444 <main+0x21c>)
  800034a:	f000 fce5 	bl	8000d18 <HAL_GPIO_WritePin>
-			  if (count1 < 0)
+			  if (count1 <= 0)
  800034e:	f8d7 3128 	ldr.w	r3, [r7, #296]	; 0x128
  8000352:	2b00      	cmp	r3, #0
- 8000354:	da0a      	bge.n	800036c <main+0x144>
+ 8000354:	dc0a      	bgt.n	800036c <main+0x144>
 			  {
 				  status1 = GREEN;
  8000356:	2302      	movs	r3, #2
@@ -406,10 +406,10 @@ int main(void)
  80003a6:	2120      	movs	r1, #32
  80003a8:	4826      	ldr	r0, [pc, #152]	; (8000444 <main+0x21c>)
  80003aa:	f000 fcb5 	bl	8000d18 <HAL_GPIO_WritePin>
-			  if (count2 < 0)
+			  if (count2 <= 0)
  80003ae:	f8d7 3120 	ldr.w	r3, [r7, #288]	; 0x120
  80003b2:	2b00      	cmp	r3, #0
- 80003b4:	da3a      	bge.n	800042c <main+0x204>
+ 80003b4:	dc3a      	bgt.n	800042c <main+0x204>
 			  {
 				  status2 = YELLOW;
  80003b6:	2301      	movs	r3, #1
@@ -437,10 +437,10 @@ int main(void)
  80003da:	2120      	movs	r1, #32
  80003dc:	4819      	ldr	r0, [pc, #100]	; (8000444 <main+0x21c>)
  80003de:	f000 fc9b 	bl	8000d18 <HAL_GPIO_WritePin>
-			  if (count2 < 0)
+			  if (count2 <= 0)
  80003e2:	f8d7 3120 	ldr.w	r3, [r7, #288]	; 0x120
  80003e6:	2b00      	cmp	r3, #0
- 80003e8:	da22      	bge.n	8000430 <main+0x208>
+ 80003e8:	dc22      	bgt.n	8000430 <main+0x208>
 			  {
 				  status2 = RED;
  80003ea:	2300      	movs	r3, #0
@@ -467,10 +467,10 @@ int main(void)
  800040e:	2120      	movs	r1, #32
  8000410:	480c      	ldr	r0, [pc, #48]	; (8000444 <main+0x21c>)
  8000412:	f000 fc81 	bl	8000d18 <HAL_GPIO_WritePin>
-			  if (count2 < 0)
+			  if (count2 <= 0)
  8000416:	f8d7 3120 	ldr.w	r3, [r7, #288]	; 0x120
  800041a:	2b00      	cmp	r3, #0
- 800041c:	da0a      	bge.n	8000434 <main+0x20c>
+ 800041c:	dc0a      	bgt.n	8000434 <main+0x20c>
 			  {
 				  status2 = GREEN;
  800041e:	2302      	movs	r3, #2
